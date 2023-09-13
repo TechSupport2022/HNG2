@@ -8,8 +8,7 @@ export const fetchMovies = async (page) => {
     url: `https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1`,
     headers: {
       accept: 'application/json',
-      Authorization:
-        'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxYTRlOTRjNGZiMTlkMjE1NmQ4NGQ0MjZmMWZmNzE4ZSIsInN1YiI6IjY0ZmYxYmU4NmEyMjI3MDExYTc5ZmUzOSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.HMCdt0K9QNL6LrN24wHfb3aVgcmgN6ud3iHUPV3WGX0'
+      Authorization: `Bearer ${process.env.API_TOKEN}`
     }
   };
 
@@ -31,8 +30,7 @@ export const fetchMovie = async (movieId) => {
     url: `https://api.themoviedb.org/3/movie/${movieId}?language=en-US`,
     headers: {
       accept: 'application/json',
-      Authorization:
-        'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxYTRlOTRjNGZiMTlkMjE1NmQ4NGQ0MjZmMWZmNzE4ZSIsInN1YiI6IjY0ZmYxYmU4NmEyMjI3MDExYTc5ZmUzOSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.HMCdt0K9QNL6LrN24wHfb3aVgcmgN6ud3iHUPV3WGX0'
+      Authorization: `Bearer ${process.env.API_TOKEN}`
     }
   };
 
@@ -149,7 +147,7 @@ export const fetchCrew = async (movieId) => {
 
   const result = await axios
     .get(
-      `https://api.themoviedb.org/3/movie/${movieId}/credits?api_key=${apiKey}`
+      `https://api.themoviedb.org/3/movie/${movieId}/credits?api_key=${process.env.API_KEY}`
     )
     .then((response) => {
       if (response.status === 200) {
@@ -184,8 +182,7 @@ export const searchMovie = async (query) => {
     url: `https://api.themoviedb.org/3/search/movie?query=${query}&include_adult=false&language=en-US&page=1`,
     headers: {
       accept: 'application/json',
-      Authorization:
-        'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxYTRlOTRjNGZiMTlkMjE1NmQ4NGQ0MjZmMWZmNzE4ZSIsInN1YiI6IjY0ZmYxYmU4NmEyMjI3MDExYTc5ZmUzOSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.HMCdt0K9QNL6LrN24wHfb3aVgcmgN6ud3iHUPV3WGX0'
+      Authorization: `Bearer ${process.env.API_TOKEN}`
     }
   };
 
@@ -202,5 +199,3 @@ export const searchMovie = async (query) => {
   return result;
 };
 
-// const genre = await fetchGenres([18, 28, 20]);
-// console.log(genre)
