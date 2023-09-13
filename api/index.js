@@ -8,7 +8,7 @@ export const fetchMovies = async (page) => {
     url: `https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1`,
     headers: {
       accept: 'application/json',
-      Authorization: `Bearer ${process.env.API_TOKEN}`
+      Authorization: `Bearer ${process.env.NEXT_PUBLIC_API_TOKEN}`
     }
   };
 
@@ -30,7 +30,7 @@ export const fetchMovie = async (movieId) => {
     url: `https://api.themoviedb.org/3/movie/${movieId}?language=en-US`,
     headers: {
       accept: 'application/json',
-      Authorization: `Bearer ${process.env.API_TOKEN}`
+      Authorization: `Bearer ${process.env.NEXT_PUBLIC_API_TOKEN}`
     }
   };
 
@@ -147,7 +147,7 @@ export const fetchCrew = async (movieId) => {
 
   const result = await axios
     .get(
-      `https://api.themoviedb.org/3/movie/${movieId}/credits?api_key=${process.env.API_KEY}`
+      `https://api.themoviedb.org/3/movie/${movieId}/credits?api_key=${process.env.NEXT_PUBLIC_API_KEY}`
     )
     .then((response) => {
       if (response.status === 200) {
@@ -182,7 +182,7 @@ export const searchMovie = async (query) => {
     url: `https://api.themoviedb.org/3/search/movie?query=${query}&include_adult=false&language=en-US&page=1`,
     headers: {
       accept: 'application/json',
-      Authorization: `Bearer ${process.env.API_TOKEN}`
+      Authorization: `Bearer ${process.env.NEXT_PUBLIC_API_TOKEN}`
     }
   };
 
