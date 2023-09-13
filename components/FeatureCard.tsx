@@ -50,7 +50,7 @@ const FeatureCard = ({ genre_ids, id, original_title, popularity, poster_path, r
                {...{ [testId]: generic_poster }}
             />
          </div>
-         <p {...{ [testId]: generic_date }}>USA, 2016</p>
+         <p {...{ [testId]: generic_date }}>{release_date}</p>
          <h2 {...{ [testId]: generic_title }}>{title}</h2>
          <Rating score="80/100" tomatoeScore="200" />
          <div className="flex justify-between items-center">
