@@ -64,7 +64,7 @@ const VideoContainer = async ({ movieId }: any) => {
                   {movieDetails.adult === false ? 'PG-13' : 'Adult'}
                </p>
                <span className="text-xl font-bold translate-y-[-5px]">.</span>
-               <div className="flex gap-3">
+               <div className="flex gap-2">
                   <p {...{ [testId]: generic_runtime }} className="font-bold flex items-center justify-start gap-3">
                      {movieDetails.runtime}
                   </p>
